@@ -7,32 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _7eam_Sondeo_web.Models
+namespace _7eam_sondeo_web.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class producto
+    public partial class PRODUCTO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public producto()
+        public PRODUCTO()
         {
-            this.sondeo = new HashSet<sondeo>();
+            this.SONDEO = new HashSet<SONDEO>();
         }
     
-        public string id_producto { get; set; }
-        public string id_categoria { get; set; }
-        public string unidad_medida { get; set; }
-        public string id_marca { get; set; }
-        public string nombre { get; set; }
-        public string presentacion { get; set; }
-        public decimal precio_consulta { get; set; }
-        public string tipo { get; set; }
+        public string ID_PRODUCTO { get; set; }
+        public string ID_CATEGORIA { get; set; }
+        public string UNIDAD_MEDIDA { get; set; }
+        public string ID_MARCA { get; set; }
+        public string PRODUCTO1 { get; set; }
+        public string PRESENTACION { get; set; }
+        public decimal PRECIO_CONSULTA { get; set; }
+        public string TIPO { get; set; }
     
-        public virtual categoria categoria { get; set; }
-        public virtual marca marca { get; set; }
-        public virtual medida medida { get; set; }
+        public virtual CATEGORIA CATEGORIA { get; set; }
+        public virtual MARCA MARCA { get; set; }
+        public virtual MEDIDA MEDIDA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sondeo> sondeo { get; set; }
+        public virtual ICollection<SONDEO> SONDEO { get; set; }
     }
 }

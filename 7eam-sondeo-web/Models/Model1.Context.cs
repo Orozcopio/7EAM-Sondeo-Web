@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _7eam_Sondeo_web.Models
+namespace _7eam_sondeo_web.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SondeoContext : DbContext
+    public partial class UDConexion : DbContext
     {
-        public SondeoContext()
-            : base("name=SondeoContext")
+        public UDConexion()
+            : base("name=UDConexion")
         {
         }
     
@@ -25,15 +25,14 @@ namespace _7eam_Sondeo_web.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<categoria> categoria { get; set; }
-        public virtual DbSet<cliente> cliente { get; set; }
-        public virtual DbSet<departamento> departamento { get; set; }
-        public virtual DbSet<marca> marca { get; set; }
-        public virtual DbSet<medida> medida { get; set; }
-        public virtual DbSet<municipio> municipio { get; set; }
-        public virtual DbSet<producto> producto { get; set; }
-        public virtual DbSet<reporte> reporte { get; set; }
-        public virtual DbSet<sondeo> sondeo { get; set; }
-        public virtual DbSet<usuario> usuario { get; set; }
+        public virtual DbSet<CATEGORIA> CATEGORIA { get; set; }
+        public virtual DbSet<CLIENTE> CLIENTE { get; set; }
+        public virtual DbSet<LOCALIZACION> LOCALIZACION { get; set; }
+        public virtual DbSet<MARCA> MARCA { get; set; }
+        public virtual DbSet<MEDIDA> MEDIDA { get; set; }
+        public virtual DbSet<PRODUCTO> PRODUCTO { get; set; }
+        public virtual DbSet<REPORTE> REPORTE { get; set; }
+        public virtual DbSet<SONDEO> SONDEO { get; set; }
+        public virtual DbSet<USUARIO> USUARIO { get; set; }
     }
 }
