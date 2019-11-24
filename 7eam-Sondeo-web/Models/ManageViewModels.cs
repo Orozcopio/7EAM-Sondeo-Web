@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace _7eam_Sondeo_web.Models
+namespace _7eam_sondeo_web.Models
 {
     public class IndexViewModel
     {
