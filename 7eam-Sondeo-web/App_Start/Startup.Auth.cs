@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using _7eam_Sondeo_web.Models;
+using _7eam_sondeo_web.Models;
 
-namespace _7eam_Sondeo_web
+namespace _7eam_sondeo_web
 {
     public partial class Startup
     {

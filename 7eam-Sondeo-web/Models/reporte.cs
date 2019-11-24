@@ -7,19 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _7eam_Sondeo_web.Models
+namespace _7eam_sondeo_web.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class reporte
+    public partial class REPORTE
     {
-        public string id_reporte { get; set; }
-        public string id_sondeo { get; set; }
-        public string id_usuario { get; set; }
-        public System.DateTime fecha_reporte { get; set; }
+        public string ID_REPORTE { get; set; }
+        public string ID_SONDEO { get; set; }
+        public string ID_USUARIO { get; set; }
+        public System.DateTime FECHA_REPORTE { get; set; }
     
-        public virtual usuario usuario { get; set; }
-        public virtual sondeo sondeo { get; set; }
+        public virtual SONDEO SONDEO { get; set; }
+        public virtual USUARIO USUARIO { get; set; }
     }
 }

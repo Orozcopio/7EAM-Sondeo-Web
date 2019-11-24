@@ -7,24 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _7eam_Sondeo_web.Models
+namespace _7eam_sondeo_web.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class cliente
+    public partial class CLIENTE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public cliente()
+        public CLIENTE()
         {
-            this.usuario = new HashSet<usuario>();
+            this.USUARIO = new HashSet<USUARIO>();
         }
     
-        public string documento { get; set; }
-        public string nombres { get; set; }
-        public string apellidos { get; set; }
+        public string DOCUMENTO { get; set; }
+        public string APELLIDO { get; set; }
+        public string NOMBRE { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<usuario> usuario { get; set; }
+        public virtual ICollection<USUARIO> USUARIO { get; set; }
     }
 }

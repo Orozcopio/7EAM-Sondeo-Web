@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace _7eam_Sondeo_web
+namespace _7eam_sondeo_web
 {
     public class BundleConfig
     {
