@@ -7,28 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _7eam_sondeo_web.Models
+namespace _7eam_Sondeo_web.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class SONDEO
+    public partial class sondeo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SONDEO()
+        public sondeo()
         {
-            this.REPORTE = new HashSet<REPORTE>();
+            this.reporte = new HashSet<reporte>();
         }
     
-        public string ID_SONDEO { get; set; }
-        public int ID_LOCAL { get; set; }
-        public string ID_PRODUCTO { get; set; }
-        public System.DateTime FECHA { get; set; }
-        public string DESCRIPCION { get; set; }
+        public string id_sondeo { get; set; }
+        public string id_municipio { get; set; }
+        public string id_producto { get; set; }
+        public System.DateTime fecha { get; set; }
+        public string local { get; set; }
     
-        public virtual LOCALIZACION LOCALIZACION { get; set; }
-        public virtual PRODUCTO PRODUCTO { get; set; }
+        public virtual municipio municipio { get; set; }
+        public virtual producto producto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<REPORTE> REPORTE { get; set; }
+        public virtual ICollection<reporte> reporte { get; set; }
     }
 }

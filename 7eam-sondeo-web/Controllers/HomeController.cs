@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace _7eam_sondeo_web.Controllers
+namespace _7eam_Sondeo_web.Controllers
 {
     public class HomeController : Controller
     {

@@ -7,24 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _7eam_sondeo_web.Models
+namespace _7eam_Sondeo_web.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class CATEGORIA
+    public partial class categoria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CATEGORIA()
+        public categoria()
         {
-            this.PRODUCTO = new HashSet<PRODUCTO>();
+            this.producto = new HashSet<producto>();
         }
     
-        public string ID_CATEGORIA { get; set; }
-        public string CATEGORIA1 { get; set; }
-        public string DESCRIPCION_CAT { get; set; }
+        public string id_categoria { get; set; }
+        public string categoria1 { get; set; }
+        public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
+        public virtual ICollection<producto> producto { get; set; }
     }
 }

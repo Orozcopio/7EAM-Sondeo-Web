@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general sobre un ensamblado se controla mediante lo siguiente
 // conjunto de atributos. Cambie los valores de estos atributos para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("_7eam_sondeo_web")]
+[assembly: AssemblyTitle("_7eam_Sondeo_web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("_7eam_sondeo_web")]
+[assembly: AssemblyProduct("_7eam_Sondeo_web")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como ID de typelib si este proyecto se expone a COM
-[assembly: Guid("bcf7b8c2-b406-4400-961b-fa9408f3cb6c")]
+[assembly: Guid("49b7911f-5380-4e94-b44d-25cf3e45eca4")]
 
 // La información de versión de un ensamblado consta de los siguientes cuatro valores:
 //

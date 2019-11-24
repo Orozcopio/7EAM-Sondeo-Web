@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using _7eam_sondeo_web.Models;
+using _7eam_Sondeo_web.Models;
 
-namespace _7eam_sondeo_web.Controllers
+namespace _7eam_Sondeo_web.Controllers
 {
     [Authorize]
     public class ManageController : Controller
@@ -333,7 +333,7 @@ namespace _7eam_sondeo_web.Controllers
             base.Dispose(disposing);
         }
 
-#region Aplicaciones auxiliares
+#region Asistentes
         // Se usan para protección XSRF al agregar inicios de sesión externos
         private const string XsrfKey = "XsrfId";
 

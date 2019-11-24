@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace _7eam_sondeo_web.Models
+namespace _7eam_Sondeo_web.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

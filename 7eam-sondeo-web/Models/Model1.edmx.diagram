@@ -4,24 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8c8720f04f804d12b15e8873aef981cf" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.CATEGORIA" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.CLIENTE" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.LOCALIZACION" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MARCA" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MEDIDA" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.REPORTE" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.SONDEO" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USUARIO" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
-        <AssociationConnector Association="Model.FK_PRODUCTO_SE_CLASIF_CATEGORI" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_USUARIO_ES_CLIENTE" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_SONDEO_SE_REALIZ_LOCALIZA" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_PRODUCTO_TIENE_MARCA" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_PRODUCTO_MIDE_MEDIDA" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_SONDEO_SE_COMPON_PRODUCTO" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_REPORTE_GENERA_SONDEO" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK_REPORTE_GENERA2_USUARIO" ManuallyRouted="false" />
+      <Diagram DiagramId="856018de3dc046cc9875017b6f993391" Name="Diagram1" ZoomLevel="100">
+        <EntityTypeShape EntityType="Model.categoria" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.cliente" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.departamento" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.marca" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.medida" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.municipio" Width="1.5" PointX="4.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.producto" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.reporte" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sondeo" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.usuario" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.fk_producto_se_clasif_categori" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_usuario_es_cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_municipi_pertenece_departam" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_producto_tiene_marca" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_producto_mide_medida" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_sondeo_se_realiz_municipi" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_sondeo_se_compon_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_reporte_genera_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.fk_reporte_genera2_sondeo" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

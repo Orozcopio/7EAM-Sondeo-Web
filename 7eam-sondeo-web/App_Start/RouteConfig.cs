@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace _7eam_sondeo_web
+namespace _7eam_Sondeo_web
 {
     public class RouteConfig
     {

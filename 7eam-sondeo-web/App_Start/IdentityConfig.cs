@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using _7eam_sondeo_web.Models;
+using _7eam_Sondeo_web.Models;
 
-namespace _7eam_sondeo_web
+namespace _7eam_Sondeo_web
 {
     public class EmailService : IIdentityMessageService
     {

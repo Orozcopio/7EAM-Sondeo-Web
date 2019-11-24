@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _7eam_sondeo_web.Models
+namespace _7eam_Sondeo_web.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MEDIDA
+    public partial class medida
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MEDIDA()
+        public medida()
         {
-            this.PRODUCTO = new HashSet<PRODUCTO>();
+            this.producto = new HashSet<producto>();
         }
     
-        public string UNIDAD_MEDIDA { get; set; }
-        public int CANTIDAD { get; set; }
+        public string unidad_medida { get; set; }
+        public int cantidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRODUCTO> PRODUCTO { get; set; }
+        public virtual ICollection<producto> producto { get; set; }
     }
 }

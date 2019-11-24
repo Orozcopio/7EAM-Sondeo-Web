@@ -5,224 +5,248 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="CATEGORIA">
+        <EntityType Name="categoria">
           <Key>
-            <PropertyRef Name="ID_CATEGORIA" />
+            <PropertyRef Name="id_categoria" />
           </Key>
-          <Property Name="ID_CATEGORIA" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="CATEGORIA" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="DESCRIPCION_CAT" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="id_categoria" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="categoria" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <EntityType Name="CLIENTE">
+        <EntityType Name="cliente">
           <Key>
-            <PropertyRef Name="DOCUMENTO" />
+            <PropertyRef Name="documento" />
           </Key>
-          <Property Name="DOCUMENTO" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="APELLIDO" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="NOMBRE" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="documento" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="nombres" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="apellidos" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <EntityType Name="LOCALIZACION">
+        <EntityType Name="departamento">
           <Key>
-            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="id_depto" />
           </Key>
-          <Property Name="ID_LOCAL" Type="int" Nullable="false" />
-          <Property Name="LOCALIDAD" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="MUNICIPIO" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="AREA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_depto" Type="int" Nullable="false" />
+          <Property Name="departamento" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
-        <EntityType Name="MARCA">
+        <EntityType Name="marca">
           <Key>
-            <PropertyRef Name="ID_MARCA" />
+            <PropertyRef Name="id_marca" />
           </Key>
-          <Property Name="ID_MARCA" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="MARCA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_marca" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="MEDIDA">
+        <EntityType Name="medida">
           <Key>
-            <PropertyRef Name="UNIDAD_MEDIDA" />
+            <PropertyRef Name="unidad_medida" />
           </Key>
-          <Property Name="UNIDAD_MEDIDA" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="CANTIDAD" Type="int" Nullable="false" />
+          <Property Name="unidad_medida" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="PRODUCTO">
+        <EntityType Name="municipio">
           <Key>
-            <PropertyRef Name="ID_PRODUCTO" />
+            <PropertyRef Name="id_municipio" />
           </Key>
-          <Property Name="ID_PRODUCTO" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="ID_CATEGORIA" Type="varchar" MaxLength="10" />
-          <Property Name="UNIDAD_MEDIDA" Type="varchar" MaxLength="5" />
-          <Property Name="ID_MARCA" Type="varchar" MaxLength="10" />
-          <Property Name="PRODUCTO" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PRESENTACION" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="PRECIO_CONSULTA" Type="numeric" Precision="8" Scale="2" Nullable="false" />
-          <Property Name="TIPO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_municipio" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="id_depto" Type="int" />
+          <Property Name="municipio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="area" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="localidad" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="REPORTE">
+        <EntityType Name="producto">
           <Key>
-            <PropertyRef Name="ID_REPORTE" />
+            <PropertyRef Name="id_producto" />
           </Key>
-          <Property Name="ID_REPORTE" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="ID_SONDEO" Type="varchar" MaxLength="50" />
-          <Property Name="ID_USUARIO" Type="varchar" MaxLength="50" />
-          <Property Name="FECHA_REPORTE" Type="datetime" Nullable="false" />
+          <Property Name="id_producto" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="id_categoria" Type="varchar" MaxLength="10" />
+          <Property Name="unidad_medida" Type="varchar" MaxLength="5" />
+          <Property Name="id_marca" Type="varchar" MaxLength="10" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="presentacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="precio_consulta" Type="numeric" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="SONDEO">
+        <EntityType Name="reporte">
           <Key>
-            <PropertyRef Name="ID_SONDEO" />
+            <PropertyRef Name="id_reporte" />
           </Key>
-          <Property Name="ID_SONDEO" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="ID_LOCAL" Type="int" Nullable="false" />
-          <Property Name="ID_PRODUCTO" Type="varchar" MaxLength="25" />
-          <Property Name="FECHA" Type="datetime" Nullable="false" />
-          <Property Name="DESCRIPCION" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="id_reporte" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="id_sondeo" Type="varchar" MaxLength="50" />
+          <Property Name="id_usuario" Type="varchar" MaxLength="50" />
+          <Property Name="fecha_reporte" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="USUARIO">
+        <EntityType Name="sondeo">
           <Key>
-            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="id_sondeo" />
           </Key>
-          <Property Name="ID_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="DOCUMENTO" Type="varchar" MaxLength="10" />
-          <Property Name="PASSWORD" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="ROL" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="id_sondeo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_municipio" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="id_producto" Type="varchar" MaxLength="25" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+          <Property Name="local" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
-        <Association Name="FK_PRODUCTO_MIDE_MEDIDA">
-          <End Role="MEDIDA" Type="Self.MEDIDA" Multiplicity="0..1" />
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="documento" Type="varchar" MaxLength="10" />
+          <Property Name="password" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="rol" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="fk_municipi_pertenece_departam">
+          <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
+          <End Role="municipio" Type="Self.municipio" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MEDIDA">
-              <PropertyRef Name="UNIDAD_MEDIDA" />
+            <Principal Role="departamento">
+              <PropertyRef Name="id_depto" />
             </Principal>
-            <Dependent Role="PRODUCTO">
-              <PropertyRef Name="UNIDAD_MEDIDA" />
+            <Dependent Role="municipio">
+              <PropertyRef Name="id_depto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PRODUCTO_SE_CLASIF_CATEGORI">
-          <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+        <Association Name="fk_producto_mide_medida">
+          <End Role="medida" Type="Self.medida" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CATEGORIA">
-              <PropertyRef Name="ID_CATEGORIA" />
+            <Principal Role="medida">
+              <PropertyRef Name="unidad_medida" />
             </Principal>
-            <Dependent Role="PRODUCTO">
-              <PropertyRef Name="ID_CATEGORIA" />
+            <Dependent Role="producto">
+              <PropertyRef Name="unidad_medida" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PRODUCTO_TIENE_MARCA">
-          <End Role="MARCA" Type="Self.MARCA" Multiplicity="0..1" />
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+        <Association Name="fk_producto_se_clasif_categori">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MARCA">
-              <PropertyRef Name="ID_MARCA" />
+            <Principal Role="categoria">
+              <PropertyRef Name="id_categoria" />
             </Principal>
-            <Dependent Role="PRODUCTO">
-              <PropertyRef Name="ID_MARCA" />
+            <Dependent Role="producto">
+              <PropertyRef Name="id_categoria" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_REPORTE_GENERA_SONDEO">
-          <End Role="SONDEO" Type="Self.SONDEO" Multiplicity="0..1" />
-          <End Role="REPORTE" Type="Self.REPORTE" Multiplicity="*" />
+        <Association Name="fk_producto_tiene_marca">
+          <End Role="marca" Type="Self.marca" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="SONDEO">
-              <PropertyRef Name="ID_SONDEO" />
+            <Principal Role="marca">
+              <PropertyRef Name="id_marca" />
             </Principal>
-            <Dependent Role="REPORTE">
-              <PropertyRef Name="ID_SONDEO" />
+            <Dependent Role="producto">
+              <PropertyRef Name="id_marca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_REPORTE_GENERA2_USUARIO">
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
-          <End Role="REPORTE" Type="Self.REPORTE" Multiplicity="*" />
+        <Association Name="fk_reporte_genera_usuario">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="reporte" Type="Self.reporte" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="USUARIO">
-              <PropertyRef Name="ID_USUARIO" />
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
             </Principal>
-            <Dependent Role="REPORTE">
-              <PropertyRef Name="ID_USUARIO" />
+            <Dependent Role="reporte">
+              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SONDEO_SE_COMPON_PRODUCTO">
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
-          <End Role="SONDEO" Type="Self.SONDEO" Multiplicity="*" />
+        <Association Name="fk_reporte_genera2_sondeo">
+          <End Role="sondeo" Type="Self.sondeo" Multiplicity="0..1" />
+          <End Role="reporte" Type="Self.reporte" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PRODUCTO">
-              <PropertyRef Name="ID_PRODUCTO" />
+            <Principal Role="sondeo">
+              <PropertyRef Name="id_sondeo" />
             </Principal>
-            <Dependent Role="SONDEO">
-              <PropertyRef Name="ID_PRODUCTO" />
+            <Dependent Role="reporte">
+              <PropertyRef Name="id_sondeo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SONDEO_SE_REALIZ_LOCALIZA">
-          <End Role="LOCALIZACION" Type="Self.LOCALIZACION" Multiplicity="1" />
-          <End Role="SONDEO" Type="Self.SONDEO" Multiplicity="*" />
+        <Association Name="fk_sondeo_se_compon_producto">
+          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+          <End Role="sondeo" Type="Self.sondeo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="LOCALIZACION">
-              <PropertyRef Name="ID_LOCAL" />
+            <Principal Role="producto">
+              <PropertyRef Name="id_producto" />
             </Principal>
-            <Dependent Role="SONDEO">
-              <PropertyRef Name="ID_LOCAL" />
+            <Dependent Role="sondeo">
+              <PropertyRef Name="id_producto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_USUARIO_ES_CLIENTE">
-          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+        <Association Name="fk_sondeo_se_realiz_municipi">
+          <End Role="municipio" Type="Self.municipio" Multiplicity="1" />
+          <End Role="sondeo" Type="Self.sondeo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CLIENTE">
-              <PropertyRef Name="DOCUMENTO" />
+            <Principal Role="municipio">
+              <PropertyRef Name="id_municipio" />
             </Principal>
-            <Dependent Role="USUARIO">
-              <PropertyRef Name="DOCUMENTO" />
+            <Dependent Role="sondeo">
+              <PropertyRef Name="id_municipio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_usuario_es_cliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="documento" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="documento" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LOCALIZACION" EntityType="Self.LOCALIZACION" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MARCA" EntityType="Self.MARCA" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MEDIDA" EntityType="Self.MEDIDA" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="REPORTE" EntityType="Self.REPORTE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SONDEO" EntityType="Self.SONDEO" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_PRODUCTO_MIDE_MEDIDA" Association="Self.FK_PRODUCTO_MIDE_MEDIDA">
-            <End Role="MEDIDA" EntitySet="MEDIDA" />
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="departamento" EntityType="Self.departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marca" EntityType="Self.marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="medida" EntityType="Self.medida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="municipio" EntityType="Self.municipio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reporte" EntityType="Self.reporte" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sondeo" EntityType="Self.sondeo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_municipi_pertenece_departam" Association="Self.fk_municipi_pertenece_departam">
+            <End Role="departamento" EntitySet="departamento" />
+            <End Role="municipio" EntitySet="municipio" />
           </AssociationSet>
-          <AssociationSet Name="FK_PRODUCTO_SE_CLASIF_CATEGORI" Association="Self.FK_PRODUCTO_SE_CLASIF_CATEGORI">
-            <End Role="CATEGORIA" EntitySet="CATEGORIA" />
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          <AssociationSet Name="fk_producto_mide_medida" Association="Self.fk_producto_mide_medida">
+            <End Role="medida" EntitySet="medida" />
+            <End Role="producto" EntitySet="producto" />
           </AssociationSet>
-          <AssociationSet Name="FK_PRODUCTO_TIENE_MARCA" Association="Self.FK_PRODUCTO_TIENE_MARCA">
-            <End Role="MARCA" EntitySet="MARCA" />
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          <AssociationSet Name="fk_producto_se_clasif_categori" Association="Self.fk_producto_se_clasif_categori">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="producto" EntitySet="producto" />
           </AssociationSet>
-          <AssociationSet Name="FK_REPORTE_GENERA_SONDEO" Association="Self.FK_REPORTE_GENERA_SONDEO">
-            <End Role="SONDEO" EntitySet="SONDEO" />
-            <End Role="REPORTE" EntitySet="REPORTE" />
+          <AssociationSet Name="fk_producto_tiene_marca" Association="Self.fk_producto_tiene_marca">
+            <End Role="marca" EntitySet="marca" />
+            <End Role="producto" EntitySet="producto" />
           </AssociationSet>
-          <AssociationSet Name="FK_REPORTE_GENERA2_USUARIO" Association="Self.FK_REPORTE_GENERA2_USUARIO">
-            <End Role="USUARIO" EntitySet="USUARIO" />
-            <End Role="REPORTE" EntitySet="REPORTE" />
+          <AssociationSet Name="fk_reporte_genera_usuario" Association="Self.fk_reporte_genera_usuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="reporte" EntitySet="reporte" />
           </AssociationSet>
-          <AssociationSet Name="FK_SONDEO_SE_COMPON_PRODUCTO" Association="Self.FK_SONDEO_SE_COMPON_PRODUCTO">
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-            <End Role="SONDEO" EntitySet="SONDEO" />
+          <AssociationSet Name="fk_reporte_genera2_sondeo" Association="Self.fk_reporte_genera2_sondeo">
+            <End Role="sondeo" EntitySet="sondeo" />
+            <End Role="reporte" EntitySet="reporte" />
           </AssociationSet>
-          <AssociationSet Name="FK_SONDEO_SE_REALIZ_LOCALIZA" Association="Self.FK_SONDEO_SE_REALIZ_LOCALIZA">
-            <End Role="LOCALIZACION" EntitySet="LOCALIZACION" />
-            <End Role="SONDEO" EntitySet="SONDEO" />
+          <AssociationSet Name="fk_sondeo_se_compon_producto" Association="Self.fk_sondeo_se_compon_producto">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="sondeo" EntitySet="sondeo" />
           </AssociationSet>
-          <AssociationSet Name="FK_USUARIO_ES_CLIENTE" Association="Self.FK_USUARIO_ES_CLIENTE">
-            <End Role="CLIENTE" EntitySet="CLIENTE" />
-            <End Role="USUARIO" EntitySet="USUARIO" />
+          <AssociationSet Name="fk_sondeo_se_realiz_municipi" Association="Self.fk_sondeo_se_realiz_municipi">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="sondeo" EntitySet="sondeo" />
+          </AssociationSet>
+          <AssociationSet Name="fk_usuario_es_cliente" Association="Self.fk_usuario_es_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -230,240 +254,266 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="CATEGORIA">
+        <EntityType Name="categoria">
           <Key>
-            <PropertyRef Name="ID_CATEGORIA" />
+            <PropertyRef Name="id_categoria" />
           </Key>
-          <Property Name="ID_CATEGORIA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CATEGORIA1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DESCRIPCION_CAT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PRODUCTO_SE_CLASIF_CATEGORI" FromRole="CATEGORIA" ToRole="PRODUCTO" />
+          <Property Name="id_categoria" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="categoria1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="producto" Relationship="Self.fk_producto_se_clasif_categori" FromRole="categoria" ToRole="producto" />
         </EntityType>
-        <EntityType Name="CLIENTE">
+        <EntityType Name="cliente">
           <Key>
-            <PropertyRef Name="DOCUMENTO" />
+            <PropertyRef Name="documento" />
           </Key>
-          <Property Name="DOCUMENTO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="APELLIDO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NOMBRE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="USUARIO" Relationship="Self.FK_USUARIO_ES_CLIENTE" FromRole="CLIENTE" ToRole="USUARIO" />
+          <Property Name="documento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_usuario_es_cliente" FromRole="cliente" ToRole="usuario" />
         </EntityType>
-        <EntityType Name="LOCALIZACION">
+        <EntityType Name="departamento">
           <Key>
-            <PropertyRef Name="ID_LOCAL" />
+            <PropertyRef Name="id_depto" />
           </Key>
-          <Property Name="ID_LOCAL" Type="Int32" Nullable="false" />
-          <Property Name="LOCALIDAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DEPARTAMENTO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MUNICIPIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="SONDEO" Relationship="Self.FK_SONDEO_SE_REALIZ_LOCALIZA" FromRole="LOCALIZACION" ToRole="SONDEO" />
+          <Property Name="id_depto" Type="Int32" Nullable="false" />
+          <Property Name="departamento1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="municipio" Relationship="Self.fk_municipi_pertenece_departam" FromRole="departamento" ToRole="municipio" />
         </EntityType>
-        <EntityType Name="MARCA">
+        <EntityType Name="marca">
           <Key>
-            <PropertyRef Name="ID_MARCA" />
+            <PropertyRef Name="id_marca" />
           </Key>
-          <Property Name="ID_MARCA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="MARCA1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PRODUCTO_TIENE_MARCA" FromRole="MARCA" ToRole="PRODUCTO" />
+          <Property Name="id_marca" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="marca1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="producto" Relationship="Self.fk_producto_tiene_marca" FromRole="marca" ToRole="producto" />
         </EntityType>
-        <EntityType Name="MEDIDA">
+        <EntityType Name="medida">
           <Key>
-            <PropertyRef Name="UNIDAD_MEDIDA" />
+            <PropertyRef Name="unidad_medida" />
           </Key>
-          <Property Name="UNIDAD_MEDIDA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CANTIDAD" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PRODUCTO_MIDE_MEDIDA" FromRole="MEDIDA" ToRole="PRODUCTO" />
+          <Property Name="unidad_medida" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="producto" Relationship="Self.fk_producto_mide_medida" FromRole="medida" ToRole="producto" />
         </EntityType>
-        <EntityType Name="PRODUCTO">
+        <EntityType Name="municipio">
           <Key>
-            <PropertyRef Name="ID_PRODUCTO" />
+            <PropertyRef Name="id_municipio" />
           </Key>
-          <Property Name="ID_PRODUCTO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ID_CATEGORIA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="UNIDAD_MEDIDA" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="ID_MARCA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="PRODUCTO1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PRESENTACION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PRECIO_CONSULTA" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
-          <Property Name="TIPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_PRODUCTO_SE_CLASIF_CATEGORI" FromRole="PRODUCTO" ToRole="CATEGORIA" />
-          <NavigationProperty Name="MARCA" Relationship="Self.FK_PRODUCTO_TIENE_MARCA" FromRole="PRODUCTO" ToRole="MARCA" />
-          <NavigationProperty Name="MEDIDA" Relationship="Self.FK_PRODUCTO_MIDE_MEDIDA" FromRole="PRODUCTO" ToRole="MEDIDA" />
-          <NavigationProperty Name="SONDEO" Relationship="Self.FK_SONDEO_SE_COMPON_PRODUCTO" FromRole="PRODUCTO" ToRole="SONDEO" />
+          <Property Name="id_municipio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_depto" Type="Int32" />
+          <Property Name="municipio1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="area" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="localidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="departamento" Relationship="Self.fk_municipi_pertenece_departam" FromRole="municipio" ToRole="departamento" />
+          <NavigationProperty Name="sondeo" Relationship="Self.fk_sondeo_se_realiz_municipi" FromRole="municipio" ToRole="sondeo" />
         </EntityType>
-        <EntityType Name="REPORTE">
+        <EntityType Name="producto">
           <Key>
-            <PropertyRef Name="ID_REPORTE" />
+            <PropertyRef Name="id_producto" />
           </Key>
-          <Property Name="ID_REPORTE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ID_SONDEO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ID_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FECHA_REPORTE" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="SONDEO" Relationship="Self.FK_REPORTE_GENERA_SONDEO" FromRole="REPORTE" ToRole="SONDEO" />
-          <NavigationProperty Name="USUARIO" Relationship="Self.FK_REPORTE_GENERA2_USUARIO" FromRole="REPORTE" ToRole="USUARIO" />
+          <Property Name="id_producto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_categoria" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="unidad_medida" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="id_marca" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="presentacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="precio_consulta" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="categoria" Relationship="Self.fk_producto_se_clasif_categori" FromRole="producto" ToRole="categoria" />
+          <NavigationProperty Name="marca" Relationship="Self.fk_producto_tiene_marca" FromRole="producto" ToRole="marca" />
+          <NavigationProperty Name="medida" Relationship="Self.fk_producto_mide_medida" FromRole="producto" ToRole="medida" />
+          <NavigationProperty Name="sondeo" Relationship="Self.fk_sondeo_se_compon_producto" FromRole="producto" ToRole="sondeo" />
         </EntityType>
-        <EntityType Name="SONDEO">
+        <EntityType Name="reporte">
           <Key>
-            <PropertyRef Name="ID_SONDEO" />
+            <PropertyRef Name="id_reporte" />
           </Key>
-          <Property Name="ID_SONDEO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ID_LOCAL" Type="Int32" Nullable="false" />
-          <Property Name="ID_PRODUCTO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="DESCRIPCION" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="LOCALIZACION" Relationship="Self.FK_SONDEO_SE_REALIZ_LOCALIZA" FromRole="SONDEO" ToRole="LOCALIZACION" />
-          <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_SONDEO_SE_COMPON_PRODUCTO" FromRole="SONDEO" ToRole="PRODUCTO" />
-          <NavigationProperty Name="REPORTE" Relationship="Self.FK_REPORTE_GENERA_SONDEO" FromRole="SONDEO" ToRole="REPORTE" />
+          <Property Name="id_reporte" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_sondeo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha_reporte" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="usuario" Relationship="Self.fk_reporte_genera_usuario" FromRole="reporte" ToRole="usuario" />
+          <NavigationProperty Name="sondeo" Relationship="Self.fk_reporte_genera2_sondeo" FromRole="reporte" ToRole="sondeo" />
         </EntityType>
-        <EntityType Name="USUARIO">
+        <EntityType Name="sondeo">
           <Key>
-            <PropertyRef Name="ID_USUARIO" />
+            <PropertyRef Name="id_sondeo" />
           </Key>
-          <Property Name="ID_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DOCUMENTO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="PASSWORD" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ROL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="CLIENTE" Relationship="Self.FK_USUARIO_ES_CLIENTE" FromRole="USUARIO" ToRole="CLIENTE" />
-          <NavigationProperty Name="REPORTE" Relationship="Self.FK_REPORTE_GENERA2_USUARIO" FromRole="USUARIO" ToRole="REPORTE" />
+          <Property Name="id_sondeo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_municipio" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_producto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="local" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="municipio" Relationship="Self.fk_sondeo_se_realiz_municipi" FromRole="sondeo" ToRole="municipio" />
+          <NavigationProperty Name="producto" Relationship="Self.fk_sondeo_se_compon_producto" FromRole="sondeo" ToRole="producto" />
+          <NavigationProperty Name="reporte" Relationship="Self.fk_reporte_genera2_sondeo" FromRole="sondeo" ToRole="reporte" />
         </EntityType>
-        <Association Name="FK_PRODUCTO_SE_CLASIF_CATEGORI">
-          <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="0..1" />
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+          </Key>
+          <Property Name="id_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="documento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rol" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="Self.fk_usuario_es_cliente" FromRole="usuario" ToRole="cliente" />
+          <NavigationProperty Name="reporte" Relationship="Self.fk_reporte_genera_usuario" FromRole="usuario" ToRole="reporte" />
+        </EntityType>
+        <Association Name="fk_producto_se_clasif_categori">
+          <End Role="categoria" Type="Self.categoria" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CATEGORIA">
-              <PropertyRef Name="ID_CATEGORIA" />
+            <Principal Role="categoria">
+              <PropertyRef Name="id_categoria" />
             </Principal>
-            <Dependent Role="PRODUCTO">
-              <PropertyRef Name="ID_CATEGORIA" />
+            <Dependent Role="producto">
+              <PropertyRef Name="id_categoria" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_USUARIO_ES_CLIENTE">
-          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="0..1" />
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+        <Association Name="fk_usuario_es_cliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="CLIENTE">
-              <PropertyRef Name="DOCUMENTO" />
+            <Principal Role="cliente">
+              <PropertyRef Name="documento" />
             </Principal>
-            <Dependent Role="USUARIO">
-              <PropertyRef Name="DOCUMENTO" />
+            <Dependent Role="usuario">
+              <PropertyRef Name="documento" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SONDEO_SE_REALIZ_LOCALIZA">
-          <End Role="LOCALIZACION" Type="Self.LOCALIZACION" Multiplicity="1" />
-          <End Role="SONDEO" Type="Self.SONDEO" Multiplicity="*" />
+        <Association Name="fk_municipi_pertenece_departam">
+          <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
+          <End Role="municipio" Type="Self.municipio" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="LOCALIZACION">
-              <PropertyRef Name="ID_LOCAL" />
+            <Principal Role="departamento">
+              <PropertyRef Name="id_depto" />
             </Principal>
-            <Dependent Role="SONDEO">
-              <PropertyRef Name="ID_LOCAL" />
+            <Dependent Role="municipio">
+              <PropertyRef Name="id_depto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PRODUCTO_TIENE_MARCA">
-          <End Role="MARCA" Type="Self.MARCA" Multiplicity="0..1" />
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+        <Association Name="fk_producto_tiene_marca">
+          <End Role="marca" Type="Self.marca" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MARCA">
-              <PropertyRef Name="ID_MARCA" />
+            <Principal Role="marca">
+              <PropertyRef Name="id_marca" />
             </Principal>
-            <Dependent Role="PRODUCTO">
-              <PropertyRef Name="ID_MARCA" />
+            <Dependent Role="producto">
+              <PropertyRef Name="id_marca" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PRODUCTO_MIDE_MEDIDA">
-          <End Role="MEDIDA" Type="Self.MEDIDA" Multiplicity="0..1" />
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+        <Association Name="fk_producto_mide_medida">
+          <End Role="medida" Type="Self.medida" Multiplicity="0..1" />
+          <End Role="producto" Type="Self.producto" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="MEDIDA">
-              <PropertyRef Name="UNIDAD_MEDIDA" />
+            <Principal Role="medida">
+              <PropertyRef Name="unidad_medida" />
             </Principal>
-            <Dependent Role="PRODUCTO">
-              <PropertyRef Name="UNIDAD_MEDIDA" />
+            <Dependent Role="producto">
+              <PropertyRef Name="unidad_medida" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SONDEO_SE_COMPON_PRODUCTO">
-          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
-          <End Role="SONDEO" Type="Self.SONDEO" Multiplicity="*" />
+        <Association Name="fk_sondeo_se_realiz_municipi">
+          <End Role="municipio" Type="Self.municipio" Multiplicity="1" />
+          <End Role="sondeo" Type="Self.sondeo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PRODUCTO">
-              <PropertyRef Name="ID_PRODUCTO" />
+            <Principal Role="municipio">
+              <PropertyRef Name="id_municipio" />
             </Principal>
-            <Dependent Role="SONDEO">
-              <PropertyRef Name="ID_PRODUCTO" />
+            <Dependent Role="sondeo">
+              <PropertyRef Name="id_municipio" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_REPORTE_GENERA_SONDEO">
-          <End Role="SONDEO" Type="Self.SONDEO" Multiplicity="0..1" />
-          <End Role="REPORTE" Type="Self.REPORTE" Multiplicity="*" />
+        <Association Name="fk_sondeo_se_compon_producto">
+          <End Role="producto" Type="Self.producto" Multiplicity="0..1" />
+          <End Role="sondeo" Type="Self.sondeo" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="SONDEO">
-              <PropertyRef Name="ID_SONDEO" />
+            <Principal Role="producto">
+              <PropertyRef Name="id_producto" />
             </Principal>
-            <Dependent Role="REPORTE">
-              <PropertyRef Name="ID_SONDEO" />
+            <Dependent Role="sondeo">
+              <PropertyRef Name="id_producto" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_REPORTE_GENERA2_USUARIO">
-          <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="0..1" />
-          <End Role="REPORTE" Type="Self.REPORTE" Multiplicity="*" />
+        <Association Name="fk_reporte_genera_usuario">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="reporte" Type="Self.reporte" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="USUARIO">
-              <PropertyRef Name="ID_USUARIO" />
+            <Principal Role="usuario">
+              <PropertyRef Name="id_usuario" />
             </Principal>
-            <Dependent Role="REPORTE">
-              <PropertyRef Name="ID_USUARIO" />
+            <Dependent Role="reporte">
+              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="UDConexion" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" />
-          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
-          <EntitySet Name="LOCALIZACION" EntityType="Self.LOCALIZACION" />
-          <EntitySet Name="MARCA" EntityType="Self.MARCA" />
-          <EntitySet Name="MEDIDA" EntityType="Self.MEDIDA" />
-          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
-          <EntitySet Name="REPORTE" EntityType="Self.REPORTE" />
-          <EntitySet Name="SONDEO" EntityType="Self.SONDEO" />
-          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
-          <AssociationSet Name="FK_PRODUCTO_SE_CLASIF_CATEGORI" Association="Self.FK_PRODUCTO_SE_CLASIF_CATEGORI">
-            <End Role="CATEGORIA" EntitySet="CATEGORIA" />
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+        <Association Name="fk_reporte_genera2_sondeo">
+          <End Role="sondeo" Type="Self.sondeo" Multiplicity="0..1" />
+          <End Role="reporte" Type="Self.reporte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sondeo">
+              <PropertyRef Name="id_sondeo" />
+            </Principal>
+            <Dependent Role="reporte">
+              <PropertyRef Name="id_sondeo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SondeoContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categoria" EntityType="Self.categoria" />
+          <EntitySet Name="cliente" EntityType="Self.cliente" />
+          <EntitySet Name="departamento" EntityType="Self.departamento" />
+          <EntitySet Name="marca" EntityType="Self.marca" />
+          <EntitySet Name="medida" EntityType="Self.medida" />
+          <EntitySet Name="municipio" EntityType="Self.municipio" />
+          <EntitySet Name="producto" EntityType="Self.producto" />
+          <EntitySet Name="reporte" EntityType="Self.reporte" />
+          <EntitySet Name="sondeo" EntityType="Self.sondeo" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
+          <AssociationSet Name="fk_producto_se_clasif_categori" Association="Self.fk_producto_se_clasif_categori">
+            <End Role="categoria" EntitySet="categoria" />
+            <End Role="producto" EntitySet="producto" />
           </AssociationSet>
-          <AssociationSet Name="FK_USUARIO_ES_CLIENTE" Association="Self.FK_USUARIO_ES_CLIENTE">
-            <End Role="CLIENTE" EntitySet="CLIENTE" />
-            <End Role="USUARIO" EntitySet="USUARIO" />
+          <AssociationSet Name="fk_usuario_es_cliente" Association="Self.fk_usuario_es_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="usuario" EntitySet="usuario" />
           </AssociationSet>
-          <AssociationSet Name="FK_SONDEO_SE_REALIZ_LOCALIZA" Association="Self.FK_SONDEO_SE_REALIZ_LOCALIZA">
-            <End Role="LOCALIZACION" EntitySet="LOCALIZACION" />
-            <End Role="SONDEO" EntitySet="SONDEO" />
+          <AssociationSet Name="fk_municipi_pertenece_departam" Association="Self.fk_municipi_pertenece_departam">
+            <End Role="departamento" EntitySet="departamento" />
+            <End Role="municipio" EntitySet="municipio" />
           </AssociationSet>
-          <AssociationSet Name="FK_PRODUCTO_TIENE_MARCA" Association="Self.FK_PRODUCTO_TIENE_MARCA">
-            <End Role="MARCA" EntitySet="MARCA" />
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          <AssociationSet Name="fk_producto_tiene_marca" Association="Self.fk_producto_tiene_marca">
+            <End Role="marca" EntitySet="marca" />
+            <End Role="producto" EntitySet="producto" />
           </AssociationSet>
-          <AssociationSet Name="FK_PRODUCTO_MIDE_MEDIDA" Association="Self.FK_PRODUCTO_MIDE_MEDIDA">
-            <End Role="MEDIDA" EntitySet="MEDIDA" />
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          <AssociationSet Name="fk_producto_mide_medida" Association="Self.fk_producto_mide_medida">
+            <End Role="medida" EntitySet="medida" />
+            <End Role="producto" EntitySet="producto" />
           </AssociationSet>
-          <AssociationSet Name="FK_SONDEO_SE_COMPON_PRODUCTO" Association="Self.FK_SONDEO_SE_COMPON_PRODUCTO">
-            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
-            <End Role="SONDEO" EntitySet="SONDEO" />
+          <AssociationSet Name="fk_sondeo_se_realiz_municipi" Association="Self.fk_sondeo_se_realiz_municipi">
+            <End Role="municipio" EntitySet="municipio" />
+            <End Role="sondeo" EntitySet="sondeo" />
           </AssociationSet>
-          <AssociationSet Name="FK_REPORTE_GENERA_SONDEO" Association="Self.FK_REPORTE_GENERA_SONDEO">
-            <End Role="SONDEO" EntitySet="SONDEO" />
-            <End Role="REPORTE" EntitySet="REPORTE" />
+          <AssociationSet Name="fk_sondeo_se_compon_producto" Association="Self.fk_sondeo_se_compon_producto">
+            <End Role="producto" EntitySet="producto" />
+            <End Role="sondeo" EntitySet="sondeo" />
           </AssociationSet>
-          <AssociationSet Name="FK_REPORTE_GENERA2_USUARIO" Association="Self.FK_REPORTE_GENERA2_USUARIO">
-            <End Role="USUARIO" EntitySet="USUARIO" />
-            <End Role="REPORTE" EntitySet="REPORTE" />
+          <AssociationSet Name="fk_reporte_genera_usuario" Association="Self.fk_reporte_genera_usuario">
+            <End Role="usuario" EntitySet="usuario" />
+            <End Role="reporte" EntitySet="reporte" />
+          </AssociationSet>
+          <AssociationSet Name="fk_reporte_genera2_sondeo" Association="Self.fk_reporte_genera2_sondeo">
+            <End Role="sondeo" EntitySet="sondeo" />
+            <End Role="reporte" EntitySet="reporte" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -471,94 +521,102 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="UDConexion">
-          <EntitySetMapping Name="CATEGORIA">
-            <EntityTypeMapping TypeName="Model.CATEGORIA">
-              <MappingFragment StoreEntitySet="CATEGORIA">
-                <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
-                <ScalarProperty Name="CATEGORIA1" ColumnName="CATEGORIA" />
-                <ScalarProperty Name="DESCRIPCION_CAT" ColumnName="DESCRIPCION_CAT" />
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="SondeoContext">
+          <EntitySetMapping Name="categoria">
+            <EntityTypeMapping TypeName="Model.categoria">
+              <MappingFragment StoreEntitySet="categoria">
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="categoria1" ColumnName="categoria" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CLIENTE">
-            <EntityTypeMapping TypeName="Model.CLIENTE">
-              <MappingFragment StoreEntitySet="CLIENTE">
-                <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
-                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
-                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="Model.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LOCALIZACION">
-            <EntityTypeMapping TypeName="Model.LOCALIZACION">
-              <MappingFragment StoreEntitySet="LOCALIZACION">
-                <ScalarProperty Name="ID_LOCAL" ColumnName="ID_LOCAL" />
-                <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
-                <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
-                <ScalarProperty Name="MUNICIPIO" ColumnName="MUNICIPIO" />
-                <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <EntitySetMapping Name="departamento">
+            <EntityTypeMapping TypeName="Model.departamento">
+              <MappingFragment StoreEntitySet="departamento">
+                <ScalarProperty Name="id_depto" ColumnName="id_depto" />
+                <ScalarProperty Name="departamento1" ColumnName="departamento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MARCA">
-            <EntityTypeMapping TypeName="Model.MARCA">
-              <MappingFragment StoreEntitySet="MARCA">
-                <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
-                <ScalarProperty Name="MARCA1" ColumnName="MARCA" />
+          <EntitySetMapping Name="marca">
+            <EntityTypeMapping TypeName="Model.marca">
+              <MappingFragment StoreEntitySet="marca">
+                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+                <ScalarProperty Name="marca1" ColumnName="marca" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MEDIDA">
-            <EntityTypeMapping TypeName="Model.MEDIDA">
-              <MappingFragment StoreEntitySet="MEDIDA">
-                <ScalarProperty Name="UNIDAD_MEDIDA" ColumnName="UNIDAD_MEDIDA" />
-                <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <EntitySetMapping Name="medida">
+            <EntityTypeMapping TypeName="Model.medida">
+              <MappingFragment StoreEntitySet="medida">
+                <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PRODUCTO">
-            <EntityTypeMapping TypeName="Model.PRODUCTO">
-              <MappingFragment StoreEntitySet="PRODUCTO">
-                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
-                <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
-                <ScalarProperty Name="UNIDAD_MEDIDA" ColumnName="UNIDAD_MEDIDA" />
-                <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
-                <ScalarProperty Name="PRODUCTO1" ColumnName="PRODUCTO" />
-                <ScalarProperty Name="PRESENTACION" ColumnName="PRESENTACION" />
-                <ScalarProperty Name="PRECIO_CONSULTA" ColumnName="PRECIO_CONSULTA" />
-                <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <EntitySetMapping Name="municipio">
+            <EntityTypeMapping TypeName="Model.municipio">
+              <MappingFragment StoreEntitySet="municipio">
+                <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+                <ScalarProperty Name="id_depto" ColumnName="id_depto" />
+                <ScalarProperty Name="municipio1" ColumnName="municipio" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="localidad" ColumnName="localidad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="REPORTE">
-            <EntityTypeMapping TypeName="Model.REPORTE">
-              <MappingFragment StoreEntitySet="REPORTE">
-                <ScalarProperty Name="ID_REPORTE" ColumnName="ID_REPORTE" />
-                <ScalarProperty Name="ID_SONDEO" ColumnName="ID_SONDEO" />
-                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
-                <ScalarProperty Name="FECHA_REPORTE" ColumnName="FECHA_REPORTE" />
+          <EntitySetMapping Name="producto">
+            <EntityTypeMapping TypeName="Model.producto">
+              <MappingFragment StoreEntitySet="producto">
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="unidad_medida" ColumnName="unidad_medida" />
+                <ScalarProperty Name="id_marca" ColumnName="id_marca" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="presentacion" ColumnName="presentacion" />
+                <ScalarProperty Name="precio_consulta" ColumnName="precio_consulta" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SONDEO">
-            <EntityTypeMapping TypeName="Model.SONDEO">
-              <MappingFragment StoreEntitySet="SONDEO">
-                <ScalarProperty Name="ID_SONDEO" ColumnName="ID_SONDEO" />
-                <ScalarProperty Name="ID_LOCAL" ColumnName="ID_LOCAL" />
-                <ScalarProperty Name="ID_PRODUCTO" ColumnName="ID_PRODUCTO" />
-                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
-                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <EntitySetMapping Name="reporte">
+            <EntityTypeMapping TypeName="Model.reporte">
+              <MappingFragment StoreEntitySet="reporte">
+                <ScalarProperty Name="id_reporte" ColumnName="id_reporte" />
+                <ScalarProperty Name="id_sondeo" ColumnName="id_sondeo" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="fecha_reporte" ColumnName="fecha_reporte" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="USUARIO">
-            <EntityTypeMapping TypeName="Model.USUARIO">
-              <MappingFragment StoreEntitySet="USUARIO">
-                <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
-                <ScalarProperty Name="DOCUMENTO" ColumnName="DOCUMENTO" />
-                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
-                <ScalarProperty Name="ROL" ColumnName="ROL" />
+          <EntitySetMapping Name="sondeo">
+            <EntityTypeMapping TypeName="Model.sondeo">
+              <MappingFragment StoreEntitySet="sondeo">
+                <ScalarProperty Name="id_sondeo" ColumnName="id_sondeo" />
+                <ScalarProperty Name="id_municipio" ColumnName="id_municipio" />
+                <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="local" ColumnName="local" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="Model.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="rol" ColumnName="rol" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

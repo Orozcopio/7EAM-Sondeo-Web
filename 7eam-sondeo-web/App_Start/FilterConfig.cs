@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace _7eam_sondeo_web
+namespace _7eam_Sondeo_web
 {
     public class FilterConfig
     {

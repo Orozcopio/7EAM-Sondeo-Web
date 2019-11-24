@@ -1,4 +1,4 @@
-﻿@model _7eam_sondeo_web.Models.VerifyCodeViewModel
+﻿@model _7eam_Sondeo_web.Models.VerifyCodeViewModel
 @{
     ViewBag.Title = "Verificar";
 }
@@ -9,7 +9,7 @@
     @Html.AntiForgeryToken()
     @Html.Hidden("provider", @Model.Provider)
     @Html.Hidden("rememberMe", @Model.RememberMe)
-    <h4>Escribir el código de verificación</h4>
+    <h4>Introducir código de verificación</h4>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
